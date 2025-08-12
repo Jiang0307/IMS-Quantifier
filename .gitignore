@@ -1,0 +1,8 @@
+MQSim
+x64
+build/
+*.fasta
+*.fastq
+*.trace
+workload.xml
+Code/bitvector_convert_time.exe
