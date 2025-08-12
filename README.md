@@ -42,7 +42,7 @@ g++ -O3 -march=native -fopenmp -funroll-loops -ffast-math -ftree-vectorize -fopt
 .\bitvector_convert_time.exe
 ```
 
-## validate_algorithm.py
+## validate_algorithm.py (deprecated)
 * Check if the result of bitvector-based method is the same as pseudoalignment
 
 # MQSim: A Simulator for Modern NVMe and SATA SSDs
