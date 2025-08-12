@@ -5,7 +5,7 @@ import os
 
 def run_mqsim_and_collect_stats():
     process = subprocess.Popen(
-        [".\\MQSim.exe", "-i", ".\\SSD_config.xml", "-w", ".\\workload.xml"],
+        [".\\MQSim.exe", "-i", ".\\SSD_config.xml", "-w", ".\\Workload.xml"],
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         stdin=subprocess.PIPE,

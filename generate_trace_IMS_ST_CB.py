@@ -34,8 +34,7 @@ MQSim_traces = []
 
 # ===================== trace 儲存設定 ===================== #
 ssdconfig_path = current_dir / "SSD_config.xml"
-trace_dir = current_dir / "traces"
-MQSim_output_dir = current_dir / "traces" / "MQSim.trace"
+trace_dir = current_dir / "Traces"
 
 if trace_dir.exists():
     for file in trace_dir.glob("MQSim_*.trace"):
@@ -126,12 +125,11 @@ for PSU in range(n_PSU * num_transcripts):
 # ===================== 輸出 MQSim_Trace =====================
 for i in range(0, len(MQSim_traces), MAX_REQUESTS_PER_FILE):
     chunk = MQSim_traces[i:i + MAX_REQUESTS_PER_FILE]
-    chunk_file = current_dir / "traces" / f"MQSim_{i // MAX_REQUESTS_PER_FILE}.trace"
+    chunk_file = current_dir / "Traces" / f"MQSim_{i // MAX_REQUESTS_PER_FILE}.trace"
     output_trace(chunk_file, chunk)
-# output_trace(MQSim_output_dir, MQSim_traces)
 
 num_trace_files = math.ceil(len(MQSim_traces) / MAX_REQUESTS_PER_FILE)
-workload_output_path = current_dir / "workload.xml"
+workload_output_path = current_dir / "Workload.xml"
 generate_workload_xml(num_trace_files, workload_output_path)
 
 print(f"\nnum_reads = {num_read_dict.inverse[num_reads]} , num_transcripts = {num_transcripts}")

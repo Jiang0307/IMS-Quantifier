@@ -132,7 +132,7 @@ You can specify your preferred SSD configuration in the XML format. If the SSD c
 
 
 ## MQSim Workload Definition
-You can define your preferred set of workloads in the XML format. If the specified workload definition file does not exist, MQSim will create a sample workload definition file in XML format for you (i.e., workload.xml). Here is the explanation of the XML attributes and tags for the workload definition file:
+You can define your preferred set of workloads in the XML format. If the specified workload definition file does not exist, MQSim will create a sample workload definition file in XML format for you (i.e., Workload.xml). Here is the explanation of the XML attributes and tags for the workload definition file:
 
 1. The entire workload definitions should be embedded within <MQSim_IO_Scenarios></MQSim_IO_Scenarios> tags. You can define different sets of *I/O scenarios* within these tags. MQSim simulates each I/O scenario separately.
 
