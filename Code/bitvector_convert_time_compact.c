@@ -8,7 +8,7 @@
 #include "uthash.h"
 #include "kseq.h"
 
-#define K 15
+#define K 11
 #define READ_LEN 100
 #define MAX_TRANSCRIPTS 1000
 #define MAX_FILES 1024
@@ -364,7 +364,7 @@ int main()
     load_reads_parallel(READ_FOLDER_PATH);
     double load_end = omp_get_wtime();
     printf(" - Loaded %d reads, %d transcripts\n", read_count, transcript_count);
-    printf(" - Total load time : %.4f seconds\n", load_end - load_start);
+    printf(" - Load time : %.4f seconds\n", load_end - load_start);
 
     double convert_start = omp_get_wtime();
     build_kmer_index();
@@ -375,6 +375,8 @@ int main()
     printf("\n - k = %d\n", K);
     printf(" - Bitvector length before compaction : %.0f\n", pow(4, K));
     printf(" - Bitvector length after compaction  : %d\n", unique_kmer_count);
-    printf(" - Total convert time : %.4f seconds\n", convert_end - convert_start);
+    printf(" - Convert time : %.4f seconds\n", convert_end-convert_start);
+    printf(" - Total time : %.4f seconds\n", (load_end-load_start) + (convert_end-convert_start));
+
     return 0;
 }

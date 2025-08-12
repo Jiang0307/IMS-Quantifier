@@ -11,14 +11,11 @@ read_path = r"D:\Data\Read"
 transcript_path = r"D:\Data\Transcript"
 MAX_REQUESTS_PER_FILE = 150000
 
-perellelism_level = "die"
 num_transcripts = count_transcripts(transcript_path)
-num_reads = num_read_dict["1M"]
-# num_reads = count_reads(read_path) * 2
+num_reads = count_reads(read_path)
+# num_reads = num_read_dict["1M"]
 
 # ===================== NAND flash config ===================== #
-# word_lines = 256
-# reads_per_block = 131072  # 每個block可容納的read數
 start_time = 0
 read_request_interval = 220000
 write_request_interval = 220000
@@ -55,14 +52,6 @@ sector_size = 512
 n_sectors_per_page = int(page_capacity / sector_size)
 word_lines = int(flash_para_node.find("Page_No_Per_Block").text)
 reads_per_block = page_capacity * 8 # 每個block可容納的read數
-
-# perellelism_dict = bidict({
-#     "no": 1,
-#     "channel": n_channels,
-#     "chip": n_channels * n_chips_per_channel,
-#     "die": n_channels * n_chips_per_channel * n_dies_per_chip
-# })
-# PSU_independent_dies = perellelism_dict[perellelism_level]
 PSU_independent_dies = n_channels * n_chips_per_channel * n_dies_per_chip
 
 sectors_per_block = n_pages_per_block * n_sectors_per_page

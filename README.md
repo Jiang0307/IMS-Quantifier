@@ -1,24 +1,27 @@
-# IMS-quantifier file usages
-## generate_trace_IMS_SR.py
+# IMS-Quantifier file usages
+## SSD_config.xml
+* Adjust SSD configs if needed
+
+## Trace generation
+* Modify `k` to change the k-mer size
+* Modify `read_path` to change read path (Move the `.fastq` files to `read_path`, which will load all `.fastq` files in `read_path`)
+* Modify `transcript_path` to change transcript_path path (Move the `.fasta` files to `transcript_path`, which will load all `.fasta` files in `transcript_path`)
+### generate_trace_IMS_SR.py
 * Load all `.fastq(reads)` and `.fasta(transcripts)`, and generate corresponding IMS_SR access patterns(read, write) to trace file
-
-## generate_trace_IMS_ST.py
+### generate_trace_IMS_ST.py
 * Load all `.fastq(reads)` and `.fasta(transcripts)`, and generate corresponding IMS_ST access patterns(read, write) to trace file
-
-## generate_trace_IMS_ST_CB.py
+### generate_trace_IMS_ST_CB.py
 * Load all `.fastq(reads)` and `.fasta(transcripts)`, and generate corresponding IMS_ST+CB access patterns(read, write) to trace file
 
-## MQSim_stats.py
-The python script will start MQSim simulation and record the IMS write/search time
+## IMS result
+### MQSim_stats.py
+The python script will start MQSim simulation using the generated traces, and record the IMS write/search time
 * Execute
 ```shell
 python .\MQSim_stats.py
 ```
-
-## validate_algorithm.py
-* Load all `.fastq(reads)` and `.fasta(transcripts)`, then check if the result of our bitvector-based method is the same as pseudoalignment
-
-## bitvector_convert_time.c
+## Bitvector convert time
+### bitvector_convert_time.c
 Calculate the time to convert all reads into bitvectors, change the defined K value to support different k-mer size, The code will load all `.fastq` files
 * Compile 
 ```shell
@@ -29,7 +32,7 @@ gcc -O3 -march=native -fopenmp -funroll-loops -ffast-math -ftree-vectorize -fopt
 .\bitvector_convert_time.exe
 ```
 
-## bitvector_convert_time.cpp
+### bitvector_convert_time.cpp (deprecated)
 Calculate the time to convert all reads into bitvectors, change the defined K value to support different k-mer size, The code will load all `.fastq` files
 * Compile 
 ```shell
@@ -39,6 +42,9 @@ g++ -O3 -march=native -fopenmp -funroll-loops -ffast-math -ftree-vectorize -fopt
 ```shell
 .\bitvector_convert_time.exe
 ```
+
+## validate_algorithm.py
+* Check if the result of bitvector-based method is the same as pseudoalignment
 
 # MQSim: A Simulator for Modern NVMe and SATA SSDs
 ## Usage in Windows
