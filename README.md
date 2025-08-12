@@ -1,6 +1,4 @@
 # IMS-Quantifier file usages
-## SSD_config.xml
-* Adjust SSD configs if needed
 
 ## Trace generation
 * Modify `k` to change the k-mer size
@@ -12,6 +10,8 @@
 * Load all `.fastq(reads)` and `.fasta(transcripts)`, and generate corresponding IMS_ST access patterns(read, write) to trace file
 ### generate_trace_IMS_ST_CB.py
 * Load all `.fastq(reads)` and `.fasta(transcripts)`, and generate corresponding IMS_ST+CB access patterns(read, write) to trace file
+### SSD_config.xml
+* Adjust SSD configs if needed
 
 ## IMS result
 ### MQSim_stats.py
@@ -22,7 +22,7 @@ python .\MQSim_stats.py
 ```
 ## Bitvector convert time
 ### bitvector_convert_time.c
-Calculate the time to convert all reads into bitvectors, change the defined K value to support different k-mer size, The code will load all `.fastq` files
+Calculate the time to convert all reads into bitvectors, change the defined `K` value to support different k-mer size, The code will load all `.fastq` files
 * Compile 
 ```shell
 gcc -O3 -march=native -fopenmp -funroll-loops -ffast-math -ftree-vectorize -fopt-info-vec bitvector_convert_time.c -o bitvector_convert_time.exe
@@ -31,9 +31,8 @@ gcc -O3 -march=native -fopenmp -funroll-loops -ffast-math -ftree-vectorize -fopt
 ```shell
 .\bitvector_convert_time.exe
 ```
-
 ### bitvector_convert_time.cpp (deprecated)
-Calculate the time to convert all reads into bitvectors, change the defined K value to support different k-mer size, The code will load all `.fastq` files
+Calculate the time to convert all reads into bitvectors, change the defined `K` value to support different k-mer size, The code will load all `.fastq` files
 * Compile 
 ```shell
 g++ -O3 -march=native -fopenmp -funroll-loops -ffast-math -ftree-vectorize -fopt-info-vec bitvector_convert_time.cpp -o bitvector_convert_time.exe
