@@ -1,17 +1,13 @@
 # IMS-Quantifier file usages
 
 ## Trace generation
+### SSD_config.xml
+* Adjust SSD configs if needed
+### generate_trace_IMS_SR.py generate_trace_IMS_ST.py generate_trace_IMS_ST_CB.py
+* Load all `.fastq(reads)` and `.fasta(transcripts)`, and generate corresponding trace files
 * Modify `k` to change the k-mer size
 * Modify `read_path` to change read path (Move the `.fastq` files to `read_path`, which will load all `.fastq` files in `read_path`)
 * Modify `transcript_path` to change transcript_path path (Move the `.fasta` files to `transcript_path`, which will load all `.fasta` files in `transcript_path`)
-### SSD_config.xml
-* Adjust SSD configs if needed
-### generate_trace_IMS_SR.py
-* Load all `.fastq(reads)` and `.fasta(transcripts)`, and generate corresponding IMS_SR access patterns(read, write) to trace file
-### generate_trace_IMS_ST.py
-* Load all `.fastq(reads)` and `.fasta(transcripts)`, and generate corresponding IMS_ST access patterns(read, write) to trace file
-### generate_trace_IMS_ST_CB.py
-* Load all `.fastq(reads)` and `.fasta(transcripts)`, and generate corresponding IMS_ST+CB access patterns(read, write) to trace file
 
 ## IMS result
 ### MQSim_stats.py
