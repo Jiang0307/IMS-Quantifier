@@ -3,7 +3,7 @@
 ## Trace generation
 ### SSD_config.xml
 * Adjust SSD configs if needed
-### generate_trace_IMS_SR.py generate_trace_IMS_ST.py generate_trace_IMS_ST_CB.py
+### generate_trace_IMS_SR.py, generate_trace_IMS_ST.py, generate_trace_IMS_ST_CB.py
 * Load all `.fastq(reads)` and `.fasta(transcripts)`, and generate corresponding trace files
 * Modify `k` to change the k-mer size
 * Modify `read_path` to change read path (Move the `.fastq` files to `read_path`, which will load all `.fastq` files in `read_path`)
