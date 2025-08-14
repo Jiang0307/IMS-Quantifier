@@ -2,5 +2,5 @@
 *.fastq
 *.trace
 workload.xml
-Code/bitvector_convert_time.exe
-/.vs
+Code/*.exe
+.vs/
