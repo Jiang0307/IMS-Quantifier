@@ -3,3 +3,4 @@
 *.trace
 workload.xml
 Code/bitvector_convert_time.exe
+/.vs
