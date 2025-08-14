@@ -1,6 +1,6 @@
 *.fasta
 *.fastq
-*.trace
 workload.xml
 Code/*.exe
+Traces/*.trace
 .vs/
