@@ -1,8 +1,8 @@
 # IMS-Quantifier file usages
-## Environment
-* `Windows`
 
 ## IMS time
+### Environment
+* `Windows`
 ### Trace generation
 #### `SSD_config.xml`
 * Adjust SSD configs if needed
@@ -19,10 +19,10 @@ The python script will start MQSim simulation using the generated traces, and re
 ```shell
 python .\MQSim_stats.py
 ```
-#### `validate_algorithm.py` (deprecated)
-* Check if the result of bitvector-based method is the same as pseudoalignment
 
 ## Bitvector convert time
+### Environment
+* `Windows` or `Linux`
 ### Compile and execution
 #### `bitvector_convert_time.c`
 Calculate the time to convert all reads into bitvectors, change the defined `K` value to support different k-mer size, The code will load all `.fastq` files
@@ -44,6 +44,11 @@ gcc -O3 -march=native -fopenmp -funroll-loops -ffast-math -ftree-vectorize -fopt
 ```shell
 .\bitvector_convert_time_compact.exe
 ```
+
+## Deprecated files
+### Validate result
+#### `validate_algorithm.py` (deprecated)
+* Check if the result of bitvector-based method is the same as pseudoalignment
 
 # MQSim: A Simulator for Modern NVMe and SATA SSDs
 ## Usage in Windows
