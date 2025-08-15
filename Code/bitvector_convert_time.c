@@ -9,7 +9,7 @@
 
 #include "kseq.h"
 
-#define K 15
+#define K 5
 #define BASE_TO_BITS(c) (((c) >> 1) & 3)
 #define KMER_MASK ((1U << (2 * (K - 1))) - 1)
 #define BITVECTOR_BIT_LEN (1U << (2 * K))

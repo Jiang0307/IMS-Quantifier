@@ -1,4 +1,6 @@
 # IMS-Quantifier file usages
+## Environment
+* `Windows`
 
 ## Trace generation
 ### `SSD_config.xml`
