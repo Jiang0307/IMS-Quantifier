@@ -27,15 +27,15 @@ gcc -O3 -march=native -fopenmp -funroll-loops -ffast-math -ftree-vectorize -fopt
 ```shell
 .\bitvector_convert_time.exe
 ```
-### `bitvector_convert_time.cpp` (deprecated)
+### `bitvector_convert_time_compact.c`
 Calculate the time to convert all reads into bitvectors, change the defined `K` value to support different k-mer size, The code will load all `.fastq` files
 * Compile 
 ```shell
-g++ -O3 -march=native -fopenmp -funroll-loops -ffast-math -ftree-vectorize -fopt-info-vec bitvector_convert_time.cpp -o bitvector_convert_time.exe
+gcc -O3 -march=native -fopenmp -funroll-loops -ffast-math -ftree-vectorize -fopt-info-vec bitvector_convert_time_compact.c -o bitvector_convert_time_compact.exe
 ```
 * Execute
 ```shell
-.\bitvector_convert_time.exe
+.\bitvector_convert_time_compact.exe
 ```
 
 ## `validate_algorithm.py` (deprecated)

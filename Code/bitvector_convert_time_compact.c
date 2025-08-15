@@ -8,7 +8,7 @@
 #include "uthash.h"
 #include "kseq.h"
 
-#define K 11
+#define K 5
 #define READ_LEN 100
 #define MAX_TRANSCRIPTS 1000
 #define MAX_FILES 1024
