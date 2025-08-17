@@ -173,32 +173,3 @@ The following parameters are used to define a trace-based workload:
 9. **Percentage_To_Be_Executed:** the percentage of requests in the input trace file that should be executed. Range = {all integer values in the range 1 to 100}.
 10. **Relay_Count:** the number of times that the trace execution should be repeated. Range = {all positive integer values}.
 11. **Time_Unit:** the unit of arrival times in the input trace file. Range = {PICOSECOND, NANOSECOND, MICROSECOND}
-
-## Analyze MQSim's XML Output
-You can use an XML processor to easily read and analyze an MQSim output file. For example, you can open an MQSim output file in MS Excel. Then, MS Excel shows a set of options and you should choose "Use the XML Source task pane". The XML file is processed in MS Excel and a task pane is shown with all output parameters listed in it. In the task pane on the right, you see different types of statistics available in the MQSim's output file. To read the value of a parameter, you should:<br />
-1. Drag and drop that parameter from the task source pane to the Excel sheet.,<br />
-2. Right click on the cell that you have dropped the parameter and select *XML* > *Refresh XML Data* from the drop-down menue.
-
-The parameters used to define the output file of the simulator are divided into categories:
-
-### Host
-For each defined IO_Flow, the following parameters are shown:
-1. **Name:** The name of the IO flow, e.g. Host.IO_Flow.Synth.No_0
-2. **Request_Count:** The total number of requests from this IO_flow.
-3. **Read_Request_Count:** The total number of read requests from this IO_flow.
-4. **Write_Request_Count:** The total number of write requests from this IO_flow.
-5. **IOPS:** The number of IO operations per second, i.e. how many requests are served per second.
-6. **IOPS_Read:** The number of read IO operations per second.
-7. **IOPS_Write:** The number of write IO operations per second.
-8. **Bytes_Transferred:** The total number of data bytes transferred across the interface.
-9. **Bytes_Transferred_Read:** The total number of data bytes read from the SSD Device.
-10. **Bytes_Transferred_write:** The total number of data bytes written to the SSD Device.
-11. **Bandwidth:** The total bandwidth delivered by the SSD Device in bytes per second.
-12. **Bandwidth_Read:** The total read bandwidth delivered by the SSD Device in bytes per second.
-13. **Bandwidth_Write:** The total write bandwidth delivered by the SSD Device in bytes per second.
-14. **Device_Response_Time:** The `average` SSD device response time for a request, in nanoseconds. This is defined as the time between enqueueing the request in the I/O submission queue, and removing it from the I/O completion queue.
-15. **Min_Device_Response_Time:** The minimum SSD device response time for a request, in nanoseconds. 
-16. **Max_Device_Response_Time:** The maximum SSD device response time for a request, in nanoseconds.
-17. **End_to_End_Request_Delay:** The `average` delay between generating an I/O request and receiving a corresponding answer. This is defined as the difference between the request arrival time, and its removal time from the I/O completion queue. Note that the request arrival_time is the same as the request enqueue_time, when using the multi-queue properties of NVMe drives.
-18. **Min_End_to_End_Request_Delay:** The minimum end-to-end request delay.
-19. **Max_End_to_End_Request_Delay:** The maximum end-to-end request delay.
