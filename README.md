@@ -1,9 +1,9 @@
 # IMS-Quantifier file usages
 
-## IMS time
+## IMS time (use MQSim to simulate the time)
 ### Environment
 * `Windows`
-### Trace generation
+### 1) Generate trace files for MQSim
 #### `SSD_config.xml`
 * Adjust SSD configs if needed
 #### `generate_trace_IMS_SR.py` `generate_trace_IMS_ST.py` `generate_trace_IMS_ST_CB.py`
@@ -12,7 +12,7 @@
 * Modify `read_path` to change read path (Move the `.fastq` files to `read_path`, which will load all `.fastq` files in `read_path`)
 * Modify `transcript_path` to change transcript_path path (Move the `.fasta` files to `transcript_path`, which will load all `.fasta` files in `transcript_path`)
 
-### Time simulation
+### 2) Time simulation using MQSim
 #### `MQSim_stats.py`
 The python script will start MQSim simulation using the generated traces, and record the IMS write/search time
 * Execute
