@@ -1,4 +1,5 @@
 # IMS-Quantifier file usages
+* Add `IMS time` and `bitvector convert time` together
 
 ## IMS time (use MQSim to simulate the time)
 ### Environment
